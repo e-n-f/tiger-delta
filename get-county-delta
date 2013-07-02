@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+$foot = .00000274;
+$slop = .5 * $foot;
+
 %state_number_map = (
 	"01" => "AL", "02" => "AK", "04" => "AZ", "05" => "AR", "06" => "CA",
 	"08" => "CO", "09" => "CT", "10" => "DE", "11" => "DC", "12" => "FL",
@@ -49,6 +52,9 @@ for $county (@counties) {
 			$lon = substr($_, $i, 10) / 1000000;
 			$lat = substr($_, $i + 10, 9) / 1000000;
 
+			$lat = int($lat / $slop) * $slop;
+			$lon = int($lon / $slop) * $slop;
+
 			if ($lat != 0) {
 				push @{$lats{$tlid}}, $lat;
 				push @{$lons{$tlid}}, $lon;
@@ -67,6 +73,11 @@ for $county (@counties) {
 		$startlat = substr($_, 200, 9) / 1000000;
 		$endlon = substr($_, 209, 10) / 1000000;
 		$endlat = substr($_, 219, 9) / 1000000;
+
+		$startlat = int($startlat / $slop) * $slop;
+		$startlon = int($startlon / $slop) * $slop;
+		$endlat = int($endlat / $slop) * $slop;
+		$endlon = int($endlon / $slop) * $slop;
 
 		unshift @{$lats{$tlid}}, $startlat;
 		unshift @{$lons{$tlid}}, $startlon;
@@ -95,6 +106,11 @@ for $county (@counties) {
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
 			($lon2, $lat2) = split(/,/, $points[$i + 1]);
+
+			$lat1 = int($lat1 / $slop) * $slop;
+			$lon1 = int($lon1 / $slop) * $slop;
+			$lat2 = int($lat2 / $slop) * $slop;
+			$lon2 = int($lon2 / $slop) * $slop;
 
 			@p = sort("$lat1,$lon1", "$lat2,$lon2");
 			$new{"$p[0] $p[1]"} = 1;
