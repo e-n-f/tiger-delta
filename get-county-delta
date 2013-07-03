@@ -1,8 +1,5 @@
 #!/usr/bin/perl
 
-$foot = .00000274;
-$slop = .5 * $foot;
-
 %state_number_map = (
 	"01" => "AL", "02" => "AK", "04" => "AZ", "05" => "AR", "06" => "CA",
 	"08" => "CO", "09" => "CT", "10" => "DE", "11" => "DC", "12" => "FL",
@@ -51,11 +48,8 @@ for $county (@counties) {
 		$tlid =~ s/^ *//;
 
 		for ($i = 18; $i < 208; $i += 19) {
-			$lon = substr($_, $i, 10) / 1000000;
-			$lat = substr($_, $i + 10, 9) / 1000000;
-
-			$lat = int($lat / $slop) * $slop;
-			$lon = int($lon / $slop) * $slop;
+			$lon = sprintf("%.5f", substr($_, $i, 10) / 1000000);
+			$lat = sprintf("%.5f", substr($_, $i + 10, 9) / 1000000);
 
 			if ($lat != 0) {
 				push @{$lats{$tlid}}, $lat;
@@ -75,15 +69,10 @@ for $county (@counties) {
 		next unless ($class =~ /^A/); # roads
 		# railroads are class B
 
-		$startlon = substr($_, 190, 10) / 1000000;
-		$startlat = substr($_, 200, 9) / 1000000;
-		$endlon = substr($_, 209, 10) / 1000000;
-		$endlat = substr($_, 219, 9) / 1000000;
-
-		$startlat = int($startlat / $slop) * $slop;
-		$startlon = int($startlon / $slop) * $slop;
-		$endlat = int($endlat / $slop) * $slop;
-		$endlon = int($endlon / $slop) * $slop;
+		$startlon = sprintf("%.5f", substr($_, 190, 10) / 1000000);
+		$startlat = sprintf("%.5f", substr($_, 200, 9) / 1000000);
+		$endlon = sprintf("%.5f", substr($_, 209, 10) / 1000000);
+		$endlat = sprintf("%.5f", substr($_, 219, 9) / 1000000);
 
 		unshift @{$lats{$tlid}}, $startlat;
 		unshift @{$lons{$tlid}}, $startlon;
@@ -118,10 +107,10 @@ for $county (@counties) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
 			($lon2, $lat2) = split(/,/, $points[$i + 1]);
 
-			$lat1 = int($lat1 / $slop) * $slop;
-			$lon1 = int($lon1 / $slop) * $slop;
-			$lat2 = int($lat2 / $slop) * $slop;
-			$lon2 = int($lon2 / $slop) * $slop;
+			$lat1 = sprintf("%.5f", $lat1);
+			$lon1 = sprintf("%.5f", $lon1);
+			$lat2 = sprintf("%.5f", $lat2);
+			$lon2 = sprintf("%.5f", $lon2);
 
 			@p = sort("$lat1,$lon1", "$lat2,$lon2");
 			$new{"$p[0] $p[1]"} = 1;
