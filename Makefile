@@ -1,4 +1,10 @@
-all: shpcat.class snap
+PBF = /data3/data/osm/geofabrik-20130701/north-america-latest.osm.pbf
+
+all: northam.snap
+
+
+northam.snap: $(PBF) osmconvert snap
+	./osmconvert $(PBF) | ./snap > northam.snap
 
 
 shpcat.class: shpcat.java
