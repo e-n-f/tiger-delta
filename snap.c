@@ -187,7 +187,9 @@ static void XMLCALL start(void *data, const char *element, const char **attribut
 
 static void XMLCALL end(void *data, const char *el) {
 	if (strcmp(el, "way") == 0) {
-		if (strstr(tags, ";highway=") != NULL) {
+		if (strstr(tags, ";highway=") != NULL ||
+		    strstr(tags, ";railway=") != NULL ||
+		    strstr(tags, ";aeroway=") != NULL) {
 			int i;
 
 			for (i = 0; i + 1 < thenodecount; i++) {
