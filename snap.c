@@ -201,10 +201,26 @@ static void XMLCALL end(void *data, const char *el) {
 							   thenodes[i + 1]->lon / 1000000.0);
 
 				if (strcmp(p1, p2) < 0) {
-					printf("%s %s 4:11\n", p1, p2);
+					printf("%s %s 4:11 // ", p1, p2);
 				} else {
-					printf("%s %s 4:11\n", p2, p1);
+					printf("%s %s 4:11 // ", p2, p1);
 				}
+
+				char *cp = strstr(tags, ";name=");
+
+				if (cp != NULL) {
+					cp += 6;
+
+					for (; *cp != '\0' && *cp != ';' && *cp != '\n'; cp++) {
+						if (*cp == ' ') {
+							putchar('_');
+						} else {
+							putchar(*cp);
+						}
+					}
+				}
+
+				putchar('\n');
 			}
 		}
 
