@@ -1,7 +1,15 @@
+SHELL = /bin/bash
+
 PBF = /data3/data/osm/geofabrik-20130701/north-america-latest.osm.pbf
 
-all: northam.snap.sort old.sort new.sort
+all: preserved.shape/meta northam.snap.sort old.sort new.sort
 
+
+preserved.shape/meta: preserved.sort ../datamaps/encode
+	cat preserved.sort | ../datamaps/encode -o preserved.shape -z20 -m4
+
+preserved.sort: old.sort northam.snap.sort
+	LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort) > preserved.sort
 
 northam.snap.sort: northam.snap
 	cat northam.snap | sed 's/ /:/' | LC_ALL=C sort > northam.snap.sort
