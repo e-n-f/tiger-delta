@@ -22,6 +22,10 @@ northam.snap.sort: northam.snap
 old.sort: county-delta/78010
 	cat county-delta/* | grep 4:11 | sed 's/ /:/' | LC_ALL=C sort > old.sort
 
+# New TIGER as datamaps
+new.shape/meta: new.sort ../datamaps/encode
+	rm -rf new.shape; cat new.sort | sed 's/:/ /' | ../datamaps/encode -o new.shape -z20 -m4
+
 # Just the streets from new TIGER that weren't in old TIGER
 new.sort: county-delta/78010
 	cat county-delta/* | grep 4:2 | sed 's/ /:/' | LC_ALL=C sort > new.sort
