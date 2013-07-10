@@ -14,6 +14,10 @@ preserved.sort: old.sort northam.snap.sort
 	LC_ALL=C join <(LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort)) northam.snap.sort > preserved.sort
 
 
+# Current OSM, as shape
+northam.shape/meta: northam.snap.sort ../datamaps/encode
+	rm -rf northam.shape; cat northam.snap.sort | sed 's/:/ /' | ../datamaps/encode -o northam.shape -z20 -m4
+
 # Just the current OSM ways
 northam.snap.sort: northam.snap
 	cat northam.snap | sed 's/ /:/' | LC_ALL=C sort > northam.snap.sort
