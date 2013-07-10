@@ -7,7 +7,7 @@ all: preserved.shape/meta northam.snap.sort old.sort new.sort
 
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
 preserved.shape/meta: preserved.sort ../datamaps/encode
-	cat preserved.sort | ../datamaps/encode -o preserved.shape -z20 -m4
+	rm -rf preserved.shape; cat preserved.sort | sed 's/:/ /' | ../datamaps/encode -o preserved.shape -z20 -m4
 
 # Obsolete streets from old TIGER that are still preserved in OSM
 preserved.sort: old.sort northam.snap.sort
