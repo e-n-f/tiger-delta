@@ -66,13 +66,17 @@ for $county (@counties) {
 		$tlid =~ s/^ *//;
 
 		$class = substr($_, 55, 3);
-		next unless ($class =~ /^A/); # roads
-		# railroads are class B
+		next unless ($class =~ /^A/ || $class =~ /B/); # roads, railroads
 
 		$startlon = sprintf("%.5f", substr($_, 190, 10) / 1000000);
 		$startlat = sprintf("%.5f", substr($_, 200, 9) / 1000000);
 		$endlon = sprintf("%.5f", substr($_, 209, 10) / 1000000);
 		$endlat = sprintf("%.5f", substr($_, 219, 9) / 1000000);
+
+		$fullname = substr($_, 17, 2 + 30 + 4 + 2);
+		$fullname =~ s/^ *//;
+		$fullname =~ s/ *$//;
+		$fullname =~ s/ +/ /g;
 
 		unshift @{$lats{$tlid}}, $startlat;
 		unshift @{$lons{$tlid}}, $startlon;
@@ -86,6 +90,7 @@ for $county (@counties) {
 		for ($i = 0; $i < $#lats; $i++) {
 			@p = sort("$lats[$i],$lons[$i]", "$lats[$i + 1],$lons[$i + 1]");
 			$old{"$p[0] $p[1]"} = 1;
+			$fullname{"$p[0] $p[1]"} = $fullname;
 		}
 	}
 	close(IN);
@@ -95,13 +100,15 @@ for $county (@counties) {
 		chomp;
 
                 ($state, $cty, $tlid, $tfidl, $tfidr, $mtfcc, $fullname, $smid, $addrls, $addrle, $addrrs, $addrre) = split(/\|/);
-		next unless ($mtfcc =~ /^S/); # roads
-		# railroads are class R
+		next unless ($mtfcc =~ /^S/ || $mtfcc =~ /R/); # roads, railroads
 
 		next unless /polyline/;
 		s/.*polyline //;
 
 		@points = split(/ /, $_);
+
+		$fullname =~ s/ *$//;
+		$fullname =~ s/ +/ /g;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -114,19 +121,20 @@ for $county (@counties) {
 
 			@p = sort("$lat1,$lon1", "$lat2,$lon2");
 			$new{"$p[0] $p[1]"} = 1;
+			$fullname{"$p[0] $p[1]"} = $fullname;
 		}
 	}
 	close(IN);
 
 	for $n (keys(%new)) {
 		unless ($old{$n}) {
-			$out .= "$n 4:2\n";
+			$out .= "$n 4:2 // $fullname{$n}\n";
 		}
 	}
 
 	for $o (keys(%old)) {
 		unless ($new{$o}) {
-			$out .= "$o 4:11\n";
+			$out .= "$o 4:11 // $fullname{$o}\n";
 		}
 	}
 }
