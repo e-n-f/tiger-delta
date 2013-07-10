@@ -37,7 +37,29 @@ run("./render -l 2 -c 3333FF -B 14:.04:1.23 /data2/data/github/tiger-delta/prese
 
 run("./render -l 2 -c 3333FF -B 14:.04:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.2");
 
-system "../pngsubtract/subtract $tmp.1 $tmp.2";
+# subtract new tiger from preserved tiger, leaving only should-be-relocated tiger
+
+run("../pngsubtract/subtract $tmp.1 $tmp.2 |", ">$tmp.remove");
+
+# zoom 14: lines are about 25 feet thick
+
+run("./render -l 2 -c FFFF00 -B 14:.04:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.3");
+
+# zoom 13: lines are about 50 feet thick
+
+run("./render -l 2 -c FFFF00 -B 13:.08:1.23 /data2/data/github/tiger-delta/northam.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.4");
+
+run("../pngsubtract/subtract $tmp.3 $tmp.4 |", ">$tmp.add");
+
+if (0 && $var{'z'} < 11) {
+	system "../pngsubtract/subtract -a $tmp.1 $tmp.3";
+} else {
+	system "../pngsubtract/subtract -a $tmp.remove $tmp.add";
+}
 
 unlink("$tmp.1");
 unlink("$tmp.2");
+unlink("$tmp.remove");
+unlink("$tmp.3");
+unlink("$tmp.4");
+unlink("$tmp.add");
