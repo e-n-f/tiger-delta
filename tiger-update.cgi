@@ -31,11 +31,11 @@ sub run {
 
 # zoom 14: lines are about 25 feet thick
 
-run("./render -l 2 -c 3333FF -B 14:.03:1.23 /data2/data/github/tiger-delta/preserved.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.1");
+run("./render -l 2 -c 3333FF -B 14:.04:1.23 /data2/data/github/tiger-delta/preserved.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.1");
 
 # buffer is exactly the same because all we want is to eliminate ones that were just split
 
-run("./render -l 2 -c 3333FF -B 13:.06:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.2");
+run("./render -l 2 -c 3333FF -B 14:.04:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.2");
 
 system "../pngsubtract/subtract $tmp.1 $tmp.2";
 
