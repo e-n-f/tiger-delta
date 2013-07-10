@@ -1,10 +1,13 @@
 PBF = /data3/data/osm/geofabrik-20130701/north-america-latest.osm.pbf
 
-all: northam.snap
+all: northam.snap county-delta/78010
 
 
 northam.snap: $(PBF) osmconvert snap
 	./osmconvert $(PBF) | ./snap > northam.snap
+
+county-delta/78010: shpcat.class get-all get-county-delta get-county-delta-wrap
+	./get-all
 
 
 shpcat.class: shpcat.java
