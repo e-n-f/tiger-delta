@@ -18,27 +18,29 @@ for $v (@vars) {
 
 chdir("/data2/data/github/datamaps");
 
+$tmp = "/tmp/$$";
+
 # zoom 14: lines are about 25 feet thick
 
-open(IN1, "./render -l 2 -c 3333FF -B 14:.03:1.23 /data2/data/github/tiger-delta/preserved.shape $var{'z'} $var{'x'} $var{'y'} |");
-open(TMP1, ">/tmp/$$.1");
-while (<IN1>) {
-	print TMP1;
+open(IN, "./render -l 2 -c 3333FF -B 14:.03:1.23 /data2/data/github/tiger-delta/preserved.shape $var{'z'} $var{'x'} $var{'y'} |");
+open(TMP, ">$tmp.1");
+while (<IN>) {
+	print TMP;
 }
-close(IN1);
-close(TMP1);
+close(IN);
+close(TMP);
 
 # buffer is exactly the same because all we want is to eliminate ones that were just split
 
-open(IN2, "./render -l 2 -c 3333FF -B 13:.06:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |");
-open(TMP2, ">/tmp/$$.2");
-while (<IN2>) {
-	print TMP2;
+open(IN, "./render -l 2 -c 3333FF -B 13:.06:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |");
+open(TMP, ">$tmp.2");
+while (<IN>) {
+	print TMP;
 }
-close(IN2);
-close(TMP2);
+close(IN);
+close(TMP);
 
-system "../pngsubtract/subtract /tmp/$$.1 /tmp/$$.2";
+system "../pngsubtract/subtract $tmp.1 $tmp.2";
 
-unlink("/tmp/$$.1");
-unlink("/tmp/$$.2");
+unlink("$tmp.1");
+unlink("$tmp.2");
