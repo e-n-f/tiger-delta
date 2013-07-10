@@ -7,7 +7,7 @@ all: preserved.shape/meta northam.shape/meta new.shape/meta
 
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
 preserved.shape/meta: preserved.sort ../datamaps/encode
-	rm -rf preserved.shape; cat preserved.sort | sed 's/:/ /' | ../datamaps/encode -o preserved.shape -z20 -m4
+	rm -rf preserved.shape; cat preserved.sort | sed 's/:/ /' | ../datamaps/encode -o preserved.shape -z20
 
 # Obsolete streets from old TIGER that are still preserved in OSM
 preserved.sort: old.sort northam.snap.sort
@@ -16,7 +16,7 @@ preserved.sort: old.sort northam.snap.sort
 
 # Current OSM, as shape
 northam.shape/meta: northam.snap.sort ../datamaps/encode
-	rm -rf northam.shape; cat northam.snap.sort | sed 's/:/ /' | ../datamaps/encode -o northam.shape -z20 -m4
+	rm -rf northam.shape; cat northam.snap.sort | sed 's/:/ /' | ../datamaps/encode -o northam.shape -z20
 
 # Just the current OSM ways
 northam.snap.sort: northam.snap
@@ -28,7 +28,7 @@ old.sort: county-delta/78010
 
 # New TIGER as datamaps
 new.shape/meta: new.sort ../datamaps/encode
-	rm -rf new.shape; cat new.sort | sed 's/:/ /' | ../datamaps/encode -o new.shape -z20 -m4
+	rm -rf new.shape; cat new.sort | sed 's/:/ /' | ../datamaps/encode -o new.shape -z20
 
 # Just the streets from new TIGER that weren't in old TIGER
 new.sort: county-delta/78010
