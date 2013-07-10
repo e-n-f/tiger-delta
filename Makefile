@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 PBF = /data3/data/osm/geofabrik-20130701/north-america-latest.osm.pbf
 
-all: preserved.shape/meta northam.snap.sort old.sort new.sort
+all: preserved.shape/meta northam.shape/meta new.shape/meta
 
 
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
