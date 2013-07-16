@@ -16,7 +16,7 @@ for $v (@vars) {
 # Works out to about z12 (~100ft/pixel)
 # Beyond that, alleys start to run into streets
 
-chdir("/data2/data/github/datamaps");
+chdir("/root/datamaps");
 
 $tmp = "/tmp/$$";
 sub run {
@@ -31,11 +31,11 @@ sub run {
 
 # zoom 13: lines are about 50 feet thick
 
-run("./render -l 2 -c 3333FF -B 13:.32:1.23 /data2/data/github/tiger-delta/preserved.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.1");
+run("./render -l 2 -c 3333FF -B 13:.32:1.23 ../shapes/preserved.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.1");
 
 # buffer is exactly the same because all we want is to eliminate ones that were just split
 
-run("./render -l 2 -c 3333FF -B 13:.32:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.2");
+run("./render -l 2 -c 3333FF -B 13:.32:1.23 ../shapes/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.2");
 
 # subtract new tiger from preserved tiger, leaving only should-be-relocated tiger
 
@@ -43,18 +43,18 @@ run("../pngsubtract/subtract $tmp.1 $tmp.2 |", ">$tmp.remove");
 
 # zoom 16: lines are about 6 feet thick
 
-run("./render -l 2 -c FFFF00 -B 16:.08:1.23 /data2/data/github/tiger-delta/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.3");
+run("./render -l 2 -c FFFF00 -B 16:.08:1.23 ../shapes/new.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.3");
 
 # zoom 14: lines are about 25 feet thick
 
-run("./render -l 2 -c FFFF00 -B 14:.32:1.23 /data2/data/github/tiger-delta/northam.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.4");
+run("./render -l 2 -c FFFF00 -B 14:.32:1.23 ../shapes/northam.shape $var{'z'} $var{'x'} $var{'y'} |", ">$tmp.4");
 
 run("../pngsubtract/subtract $tmp.3 $tmp.4 |", ">$tmp.add");
 
 if (0 && $var{'z'} < 11) {
-	system "../pngsubtract/subtract -a $tmp.1 $tmp.3";
+	system "../pngsubtract/subtract -t -a $tmp.1 $tmp.3";
 } else {
-	system "../pngsubtract/subtract -a $tmp.remove $tmp.add";
+	system "../pngsubtract/subtract -t -a $tmp.remove $tmp.add";
 }
 
 unlink("$tmp.1");
