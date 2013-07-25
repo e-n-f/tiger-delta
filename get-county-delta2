@@ -93,7 +93,7 @@ for $county (@counties) {
 		$fullname =~ s/^ *//;
 		$fullname =~ s/ *$//;
 		$fullname =~ s/ +/ /g;
-		$fullname =~ s/'/''g/;
+		$fullname =~ s/'/''/g;
 
 		unshift @{$lats{$tlid}}, $startlat;
 		unshift @{$lons{$tlid}}, $startlon;
@@ -135,7 +135,7 @@ for $county (@counties) {
 
 		$fullname =~ s/ *$//;
 		$fullname =~ s/ +/ /g;
-		$fullname =~ s/'/''g/;
+		$fullname =~ s/'/''/g;
 
 		$nedge++;
 		$kind{$nedge} = "new";
