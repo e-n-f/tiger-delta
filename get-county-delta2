@@ -26,8 +26,22 @@ if ($#ARGV >= 0) {
 	);
 }
 
+print <<EOF
+SET CLIENT_ENCODING TO UTF8;
+SET STANDARD_CONFORMING_STRINGS TO ON;
+BEGIN;
+CREATE TABLE "tiger" (gid serial PRIMARY KEY,
+"age" varchar(20),
+"class" varchar(20),
+"fullname" varchar(100));
+SELECT AddGeometryColumn('','tiger','geom','0','MULTILINESTRING',2);
+COMMIT;
+EOF
+;
+
 for $county (@counties) {
 	print STDERR "county $county\n";
+	print "BEGIN;\n";
 
 	%old = ();
 	%new = ();
@@ -36,6 +50,7 @@ for $county (@counties) {
 	%kind = ();
 	%name = ();
 	%points = ();
+	%class = ();
 	$nedge = 0;
 
 	$state = substr($county, 0, 2);
@@ -78,6 +93,7 @@ for $county (@counties) {
 		$fullname =~ s/^ *//;
 		$fullname =~ s/ *$//;
 		$fullname =~ s/ +/ /g;
+		$fullname =~ s/'/''g/;
 
 		unshift @{$lats{$tlid}}, $startlat;
 		unshift @{$lons{$tlid}}, $startlon;
@@ -89,8 +105,9 @@ for $county (@counties) {
 		@lons = @{$lons{$tlid}};
 
 		$nedge++;
-		$kind{$nedge} = "4:11";
+		$kind{$nedge} = "old";
 		$name{$nedge} = $fullname;
+		$class{$nedge} = $class;
 
 		for ($i = 0; $i < $#lats; $i++) {
 			if ($i == 0) {
@@ -118,10 +135,12 @@ for $county (@counties) {
 
 		$fullname =~ s/ *$//;
 		$fullname =~ s/ +/ /g;
+		$fullname =~ s/'/''g/;
 
 		$nedge++;
-		$kind{$nedge} = "4:2";
+		$kind{$nedge} = "new";
 		$name{$nedge} = $fullname;
+		$class{$nedge} = $mtfcc;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -157,29 +176,37 @@ for $county (@counties) {
 
 			if ($dup{"$p[0] $p[1]"}) {
 				if ($within) {
-					print " $kind{$i} // $name{$i}\n";
+					print "))');\n";
 					$within = 0;
 				}
 
 				# print "($p[0] $p[1])\n";
 			} else {
 				if (!$within) {
-					print "$points[$j] ";
+					print "INSERT INTO \"tiger\" (\"age\",\"class\",\"fullname\",geom) ";
+					print "VALUES ('$kind{$i}','$class{$i}','$name{$i}',";
+					print "'MULTILINESTRING((";
+
+					print "$points[$j]";
 					$within = 1;
 				}
 
-				print "$points[$j + 1] ";
+				print " $points[$j + 1]";
 
-				if ($within++ == 10) {
-					print " $kind{$i} // $name{$i}\n";
-					$within = 0;
+				if (0) {
+					if ($within++ == 10) {
+						print "))');\n";
+						$within = 0;
+					}
 				}
 			}
 		}
 
 		if ($within) {
-			print " $kind{$i} // $name{$i}\n";
+			print "))');\n";
 			$within = 0;
 		}
 	}
+
+	print "COMMIT;\n";
 }
