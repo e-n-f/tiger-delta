@@ -46,6 +46,8 @@ for $county (@counties) {
 	%old = ();
 	%new = ();
 	%dup = ();
+	%lats = ();
+	%lons = ();
 
 	%kind = ();
 	%name = ();
