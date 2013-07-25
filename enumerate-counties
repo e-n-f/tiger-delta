@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# tl_2012_01001_edges.zip
+
+ls tiger/www2.census.gov/geo/tiger/TIGER2012/EDGES |
+grep '\.zip' |
+sed 's/_edges.zip//' |
+sed 's/.*_//'

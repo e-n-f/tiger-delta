@@ -1,9 +1,11 @@
 #!/bin/sh
 
-dropdb -U postgres tigerchanges
-createdb -U postgres -T template_postgis tigerchanges
+db=tigerdelta
 
-./get-county-delta2 ${1+"$@"} | psql -U postgres tigerchanges
+dropdb -U postgres $db
+createdb -U postgres -T template_postgis $db
 
-echo "CREATE INDEX tiger_geom ON tiger USING GIST(geom);" | psql -U postgres tigerchanges
+./get-county-delta2 ${1+"$@"} | psql -U postgres $db
+
+echo "CREATE INDEX tiger_geom ON tiger USING GIST(geom);" | psql -U postgres $db
 
