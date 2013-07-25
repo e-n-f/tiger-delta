@@ -55,7 +55,7 @@ for $county (@counties) {
 
 	$state = substr($county, 0, 2);
 	$statename = $state_number_map{$state};
-	$file = "/data/data/tiger/2006/www2.census.gov/geo/tiger/tiger2006se/$statename/TGR${county}.ZIP";
+	$file = "tiger/www2.census.gov/geo/tiger/tiger2006se/$statename/TGR${county}.ZIP";
 
 	open(IN, "unzip -p $file TGR$county.RT2 |");
 	while (<IN>) {
@@ -111,17 +111,17 @@ for $county (@counties) {
 
 		for ($i = 0; $i < $#lats; $i++) {
 			if ($i == 0) {
-				push @{$points{$nedge}}, "$lats[$i],$lons[$i]";
+				push @{$points{$nedge}}, "$lons[$i] $lats[$i]";
 			}
 
-			push @{$points{$nedge}}, "$lats[$i + 1],$lons[$i + 1]";
-			@p = sort("$lats[$i],$lons[$i]", "$lats[$i + 1],$lons[$i + 1]");
+			push @{$points{$nedge}}, "$lons[$i + 1] $lats[$i + 1]";
+			@p = sort("$lons[$i] $lats[$i]", "$lons[$i + 1] $lats[$i + 1]");
 			$old{"$p[0] $p[1]"} = 1;
 		}
 	}
 	close(IN);
 
-	open(IN, "java shpcat /data/data/tiger/2013/www2.census.gov/geo/tiger/TIGERrd13/EDGES/tl_rd13_${county}_edges.zip |");
+	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2012/EDGES/tl_2012_${county}_edges.zip |");
 	while (<IN>) {
 		chomp;
 
@@ -152,11 +152,11 @@ for $county (@counties) {
 			$lon2 = sprintf("%.5f", $lon2);
 
 			if ($i == 0) {
-				push @{$points{$nedge}}, "$lat1,$lon1";
+				push @{$points{$nedge}}, "$lon1 $lat1";
 			}
 
-			push @{$points{$nedge}}, "$lat2,$lon2";
-			@p = sort("$lat1,$lon1", "$lat2,$lon2");
+			push @{$points{$nedge}}, "$lon2 $lat2";
+			@p = sort("$lon1 $lat1", "$lon2 $lat2");
 			$new{"$p[0] $p[1]"} = 1;
 		}
 	}
@@ -180,7 +180,7 @@ for $county (@counties) {
 					$within = 0;
 				}
 
-				# print "($p[0] $p[1])\n";
+				# print "DUPLICATE ($p[0] $p[1])\n";
 			} else {
 				if (!$within) {
 					print "INSERT INTO \"tiger\" (\"age\",\"class\",\"fullname\",geom) ";
@@ -191,7 +191,7 @@ for $county (@counties) {
 					$within = 1;
 				}
 
-				print " $points[$j + 1]";
+				print ", $points[$j + 1]";
 
 				if (0) {
 					if ($within++ == 10) {
