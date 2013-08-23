@@ -93,16 +93,8 @@ for $county (@counties) {
 		@lons = @{$lons{$tlid}};
 
 		$nedge++;
-		$kind{$nedge} = "old";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $class;
 
 		for ($i = 0; $i < $#lats; $i++) {
-			if ($i == 0) {
-				push @{$points{$nedge}}, "$lons[$i] $lats[$i]";
-			}
-
-			push @{$points{$nedge}}, "$lons[$i + 1] $lats[$i + 1]";
 			@p = sort("$lons[$i] $lats[$i]", "$lons[$i + 1] $lats[$i + 1]");
 			$old{"$p[0] $p[1]"} = 1;
 		}
@@ -126,9 +118,6 @@ for $county (@counties) {
 		$fullname =~ s/'/''/g;
 
 		$nedge++;
-		$kind{$nedge} = "a2010";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $mtfcc;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -139,11 +128,6 @@ for $county (@counties) {
 			$lat2 = sprintf("%.5f", $lat2);
 			$lon2 = sprintf("%.5f", $lon2);
 
-			if ($i == 0) {
-				push @{$points{$nedge}}, "$lon1 $lat1";
-			}
-
-			push @{$points{$nedge}}, "$lon2 $lat2";
 			@p = sort("$lon1 $lat1", "$lon2 $lat2");
 			$a2010{"$p[0] $p[1]"} = 1;
 		}
@@ -167,9 +151,6 @@ for $county (@counties) {
 		$fullname =~ s/'/''/g;
 
 		$nedge++;
-		$kind{$nedge} = "a2012";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $mtfcc;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -180,11 +161,6 @@ for $county (@counties) {
 			$lat2 = sprintf("%.5f", $lat2);
 			$lon2 = sprintf("%.5f", $lon2);
 
-			if ($i == 0) {
-				push @{$points{$nedge}}, "$lon1 $lat1";
-			}
-
-			push @{$points{$nedge}}, "$lon2 $lat2";
 			@p = sort("$lon1 $lat1", "$lon2 $lat2");
 			$a2012{"$p[0] $p[1]"} = 1;
 		}
@@ -208,9 +184,6 @@ for $county (@counties) {
 		$fullname =~ s/'/''/g;
 
 		$nedge++;
-		$kind{$nedge} = "a2012";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $mtfcc;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -221,11 +194,6 @@ for $county (@counties) {
 			$lat2 = sprintf("%.5f", $lat2);
 			$lon2 = sprintf("%.5f", $lon2);
 
-			if ($i == 0) {
-				push @{$points{$nedge}}, "$lon1 $lat1";
-			}
-
-			push @{$points{$nedge}}, "$lon2 $lat2";
 			@p = sort("$lon1 $lat1", "$lon2 $lat2");
 			$a2013{"$p[0] $p[1]"} = 1;
 		}
