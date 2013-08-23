@@ -242,7 +242,7 @@ for $county (@counties) {
 	for $n (keys(%a2012)) {
 		unless ($a2010{$n}) {
 			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
-			print "$lat1,$lon1 $lat2,$lon2 8:1\n";
+			print "$lat1,$lon1 $lat2,$lon2 8:179\n";
 		}
 	}
 
