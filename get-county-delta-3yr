@@ -200,24 +200,23 @@ for $county (@counties) {
 	}
 	close(IN);
 
-	for $n (keys(%a2010)) {
-		unless ($old{$n}) {
-			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
-			print "$lat1,$lon1 $lat2,$lon2 8:120\n";
-		}
-	}
-
-	for $n (keys(%a2012)) {
-		unless ($a2010{$n}) {
-			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
-			print "$lat1,$lon1 $lat2,$lon2 8:179\n";
-		}
-	}
-
 	for $n (keys(%a2013)) {
-		unless ($a2012{$n}) {
+		if (!$a2012{$n}) {
 			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
-			print "$lat1,$lon1 $lat2,$lon2 8:60\n";
+			print "$lat1,$lon1 $lat2,$lon2 8:30\n";
+			# added 2013
+		} elsif (!$a2010{$n}) {
+			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
+			print "$lat1,$lon1 $lat2,$lon2 8:90\n";
+			# added 2012
+		} elsif (!$old{$n}) {
+			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
+			# added 2010
+			print "$lat1,$lon1 $lat2,$lon2 8:170\n";
+		} else {
+			($lon1, $lat1, $lon2, $lat2) = split(/ /, $n);
+			# old
+			print "$lat1,$lon1 $lat2,$lon2 8:120\n";
 		}
 	}
 }
