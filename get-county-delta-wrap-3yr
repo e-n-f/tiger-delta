@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mkdir -p county-delta-3yr
+./get-county-delta-3yr $1 > county-delta-3yr/$1
