@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir -p tiles/$1/$2/$3
+echo "$1 $2 $3 $4 $5 $6"
+/data2/data/github/datamaps/render -C 180 -L 2 $1 $2 $3 $4 | pngquant 48 > tiles/$1/$2/$3/$4.png
