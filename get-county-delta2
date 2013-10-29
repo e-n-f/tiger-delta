@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use utf8;
+
 %state_number_map = (
 	"01" => "AL", "02" => "AK", "04" => "AZ", "05" => "AR", "06" => "CA",
 	"08" => "CO", "09" => "CT", "10" => "DE", "11" => "DC", "12" => "FL",
@@ -13,6 +15,27 @@
 	"50" => "VT", "51" => "VA", "53" => "WA", "54" => "WV", "55" => "WI",
 	"56" => "WY", "60" => "AS", "66" => "GU", "69" => "MP", "72" => "PR",
 	"78" => "VI",
+);
+
+%classes = (
+	# http://wiki.openstreetmap.org/wiki/TIGER_2010
+
+	"S1100" => "highway=motorway",
+	"S1200" => "highway=primary",
+	"S1400" => "highway=residential", # wiki says unclassified
+	"S1500" => "highway=track",
+	"S1630" => "highway=motorway_link",
+	"S1640" => "highway=service",
+	"S1710" => "highway=footway",
+	"S1720" => "highway=steps",
+	"S1730" => "highway=service",
+	"S1740" => "highway=service",
+	"S1780" => "highway=service",
+	"S1820" => "highway=cycleway",
+	"S1830" => "highway=bridleway",
+	"R1011" => "railway=rail",
+	"R1051" => "railway=light_rail",
+	"R1052" => "railway=funicular",
 );
 
 if ($#ARGV >= 0) {
@@ -53,7 +76,7 @@ for $county (@counties) {
 	%name = ();
 	%points = ();
 	%class = ();
-	$nedge = 0;
+	$edgecount = 0;
 
 	$state = substr($county, 0, 2);
 	$statename = $state_number_map{$state};
@@ -106,24 +129,25 @@ for $county (@counties) {
 		@lats = @{$lats{$tlid}};
 		@lons = @{$lons{$tlid}};
 
-		$nedge++;
-		$kind{$nedge} = "old";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $class;
+		$edgecount++;
+		$kind{$edgecount} = "old";
+		$name{$edgecount} = $fullname;
+		$class{$edgecount} = $class;
+		# $file{$edgecount} = $file;
 
 		for ($i = 0; $i < $#lats; $i++) {
 			if ($i == 0) {
-				push @{$points{$nedge}}, "$lons[$i] $lats[$i]";
+				push @{$points{$edgecount}}, "$lons[$i] $lats[$i]";
 			}
 
-			push @{$points{$nedge}}, "$lons[$i + 1] $lats[$i + 1]";
+			push @{$points{$edgecount}}, "$lons[$i + 1] $lats[$i + 1]";
 			@p = sort("$lons[$i] $lats[$i]", "$lons[$i + 1] $lats[$i + 1]");
 			$old{"$p[0] $p[1]"} = 1;
 		}
 	}
 	close(IN);
 
-	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2012/EDGES/tl_2012_${county}_edges.zip |");
+	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2013/EDGES/tl_2013_${county}_edges.zip |");
 	while (<IN>) {
 		chomp;
 
@@ -139,10 +163,11 @@ for $county (@counties) {
 		$fullname =~ s/ +/ /g;
 		$fullname =~ s/'/''/g;
 
-		$nedge++;
-		$kind{$nedge} = "new";
-		$name{$nedge} = $fullname;
-		$class{$nedge} = $mtfcc;
+		$edgecount++;
+		$kind{$edgecount} = "new";
+		$name{$edgecount} = $fullname;
+		$class{$edgecount} = $mtfcc;
+		# $file{$edgecount} = $file;
 
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
@@ -154,10 +179,10 @@ for $county (@counties) {
 			$lon2 = sprintf("%.5f", $lon2);
 
 			if ($i == 0) {
-				push @{$points{$nedge}}, "$lon1 $lat1";
+				push @{$points{$edgecount}}, "$lon1 $lat1";
 			}
 
-			push @{$points{$nedge}}, "$lon2 $lat2";
+			push @{$points{$edgecount}}, "$lon2 $lat2";
 			@p = sort("$lon1 $lat1", "$lon2 $lat2");
 			$new{"$p[0] $p[1]"} = 1;
 		}
@@ -170,43 +195,45 @@ for $county (@counties) {
 		}
 	}
 
-	for ($i = 0; $i < $nedge; $i++) {
+	for ($i = 0; $i < $edgecount; $i++) {
 		@points = @{$points{$i}};
 
 		for ($j = 0; $j < $#points; $j++) {
 			@p = sort($points[$j], $points[$j + 1]);
+			$kind = $kind{$i};
 
 			if ($dup{"$p[0] $p[1]"}) {
-				if ($within) {
-					print "))');\n";
-					$within = 0;
-				}
+				$kind = "both";
 
-				# print "DUPLICATE ($p[0] $p[1])\n";
-			} else {
-				if (!$within) {
+				if ($used{"$p[0] $p[1]"}) {
+					$kind = "used";
+				} else {
+					$used{"$p[0] $p[1]"} = 1;
+				}
+			}
+
+			if ($within ne "" && $within ne $kind) {
+				print "))');\n";
+				$within = "";
+			}
+
+			if ($kind ne "used") {
+				if ($within eq "") {
 					print "INSERT INTO \"tiger\" (\"age\",\"class\",\"fullname\",geom) ";
-					print "VALUES ('$kind{$i}','$class{$i}','$name{$i}',";
+					print "VALUES ('$kind','$class{$i}','$name{$i}',";
 					print "'MULTILINESTRING((";
 
 					print "$points[$j]";
-					$within = 1;
+					$within = $kind;
 				}
 
 				print ", $points[$j + 1]";
-
-				if (0) {
-					if ($within++ == 10) {
-						print "))');\n";
-						$within = 0;
-					}
-				}
 			}
 		}
 
-		if ($within) {
+		if ($within ne "") {
 			print "))');\n";
-			$within = 0;
+			$within = "";
 		}
 	}
 
