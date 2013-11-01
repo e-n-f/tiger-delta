@@ -41,8 +41,8 @@ northam.snap: $(PBF) osmconvert snap
 
 # Streets in new TIGER that aren't in old TIGER, and
 # streets in old TIGER that aren't in new TIGER
-county-delta/78010: shpcat.class get-all get-county-delta get-county-delta-wrap
-	./get-all
+county-delta/78010: shpcat.class get-all2 get-county-delta2 get-county-delta-wrap2
+	./get-all2
 
 
 # Converts ESRI shapefiles to text
