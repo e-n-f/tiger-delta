@@ -1,0 +1,230 @@
+#!/usr/bin/perl
+
+$pi = 4 * atan2(1, 1);
+$foot = .00000274;
+$bucket = 100 * $foot;
+
+$streets = shift(@ARGV);
+
+open(IN, $streets);
+while (<IN>) {
+	chomp;
+	if (/\/\/ id=([0-9]*)/) {
+		$id = $1;
+	} else {
+		print STDERR "no id in $_\n";
+		next;
+	}
+
+	next unless /;highway=/;
+	next if /;highway=footway/;
+	next if /;highway=steps/;
+	next if /;highway=cycleway/;
+	next if /;highway=bridleway/;
+	next if /;highway=pedestrian/;
+
+	if (/;oneway=([^ ;]*)/) {
+		$oneway{$id} = $1;
+	} else {
+		$oneway{$id} = "unknown";
+	}
+
+	if ($seq++ % 100 == 0) {
+		print STDERR "$id\r";
+	}
+
+	s/ *\/\/.*//;
+	@points = split(/ /);
+	@lat = ();
+	@lon = ();
+	@node = ();
+
+	for $p (@points) {
+		($lat, $lon, $node) = split(/,/, $p);
+
+		if ($rat == 0) {
+			$rat = cos($lat * $pi / 180);
+			# print STDERR "rat is $rat\n";
+		}
+
+		push @lat, $lat;
+		push @lon, $lon;
+		push @node, $node;
+	}
+
+	@lat2 = ();
+	@lon2 = ();
+	@node2 = ();
+
+	for ($i = 0; $i < $#lat; $i++) {
+		push @lat2, $lat[$i];
+		push @lon2, $lon[$i];
+		push @node2, $node[$i];
+
+		$latd = ($lat[$i + 1] - $lat[$i]);
+		$lond = ($lon[$i + 1] - $lon[$i]) * $rat;
+		$d = sqrt($latd * $latd + $lond * $lond);
+
+		$len{$id} += $d / $foot;
+
+		if ($d > $bucket) {
+			# print STDERR "too far $d between $lat[$i],$lon[$i] and $lat[$i + 1],$lon[$i + 1]\n";
+
+			$n = int($d / $bucket) + 1;
+			for ($j = 1; $j < $n; $j++) {
+				$lat = $lat[$i] * (1 - ($j / $n)) + $lat[$i + 1] * (($j / $n));
+				$lon = $lon[$i] * (1 - ($j / $n)) + $lon[$i + 1] * (($j / $n));
+
+				# print STDERR "interpolate $lat,$lon  $j of $n\n";
+
+				push @lat2, $lat;
+				push @lon2, $lon;
+				push @node2, "$node[$i],$node[$i + 1]";
+			}
+		}
+	}
+
+	push @lat2, $lat[$#lat];
+	push @lon2, $lon[$#lon];
+	push @node2, $node[$#lon];
+
+	@{$lats{$id}} = @lat2;
+	@{$lons{$id}} = @lon2;
+	@{$nodes{$id}} = @node2;
+
+	for ($i = 0; $i < $#lat2; $i++) {
+		$lat = ($lat2[$i] + $lat2[$i + 1]) / 2;
+		$lon = ($lon2[$i] + $lon2[$i + 1]) / 2;
+
+		$a = int($lat / $bucket);
+		$o = int($lon * $rat / $bucket);
+
+		push @{$ways{$a}{$o}}, "$id $i";
+	}
+}
+
+# probably adpated from http://paulbourke.net/geometry/pointlineplane/DistancePoint.java ?
+sub distanceAlongSegment {
+        my ($p1x, $p1y, $p2x, $p2y, $p3x, $p3y) = @_;
+
+        my $xDelta = $p2x - $p1x;
+        my $yDelta = $p2y - $p1y;
+
+	if ($xDelta * $xDelta + $yDelta * $yDelta == 0) {
+		return -1;
+	}
+
+        my $u = (($p3x - $p1x) * $xDelta + ($p3y - $p1y) * $yDelta) / ($xDelta * $xDelta + $yDelta * $yDelta);
+
+        return $u;
+}
+
+sub compare($$) {
+	if ($cmp_polarity{$_[0]} != $cmp_polarity{$_[1]}) {
+		return $cmp_polarity{$_[0]} - $cmp_polarity{$_[1]};
+	}
+	if ($cmp_same{$_[0]} != $cmp_same{$_[1]}) {
+		return $cmp_same{$_[0]} - $cmp_same{$_[1]};
+	}
+
+	return $cmp_dist{$_[0]} - $cmp_dist{$_[1]};
+}
+
+while (<>) {
+	chomp;
+	($when, $a, $to, $b) = split(/ /);
+	($lat, $lon) = split(/[, ]/, $a);
+	($lat2, $lon2) = split(/[, ]/, $b);
+
+	$angle = atan2($lat2 - $lat, ($lon2 - $lon) * $rat) * 180 / $pi;
+
+	$a = int($lat / $bucket);
+	$o = int($lon * $rat / $bucket);
+
+	@possible = ();
+	for ($aa = $a - 1; $aa <= $a + 1; $aa++) {
+		for ($oo = $o - 1; $oo <= $o + 1; $oo++) {
+			push @possible, @{$ways{$aa}{$oo}};
+		}
+	}
+
+	%cmp_polarity = ();
+	%cmp_same = ();
+	%cmp_dist = ();
+	%along = ();
+
+	for $p (@possible) {
+		($way, $seg) = split(/ /, $p);
+		$along = distanceAlongSegment($lats{$way}[$seg], $lons{$way}[$seg] * $rat,
+		                              $lats{$way}[$seg + 1], $lons{$way}[$seg + 1] * $rat,
+					      $lat, $lon * $rat);
+		if ($along < 0) {
+			$along = 0;
+		}
+		if ($along > 1) {
+			$along = 1;
+		}
+
+		$along{$p} = $along;
+
+		$lat1 = $lats{$way}[$seg + 1] * $along + $lats{$way}[$seg] * (1 - $along);
+		$lon1 = $lons{$way}[$seg + 1] * $along + $lons{$way}[$seg] * (1 - $along);
+
+		$ang = atan2($lats{$way}[$seg + 1] - $lats{$way}[$seg],
+			     ($lons{$way}[$seg + 1] - $lons{$way}[$seg]) * $rat) * 180 / $pi;
+		$angd = ($angle - $ang + 720 + 180) % 360 - 180;
+
+		$cmp_polarity{$p} = 2;
+		if ($oneway{$way} eq "yes" && $angd > -45 && $angd < 45) {
+			$cmp_polarity{$p} = 0;
+		} elsif ($oneway{$way} eq "-1" && ($angd < -135 || $angd > 135)) {
+			$cmp_polarity{$p} = 0;
+		} elsif (($angd < -135 || $angd > 135) || ($angd > -45 && $angd < 45)) {
+			$cmp_polarity{$p} = 1;
+		}
+
+		$latd = ($lat - $lat1);
+		$lond = ($lon - $lon1) * $rat;
+		$d = sqrt($latd * $latd + $lond * $lond);
+
+		$cmp_dist{$p} = $d;
+
+		if ($way eq $prevway) {
+			$cmp_same{$p} = 1;
+		} else {
+			$cmp_same{$p} = 0;
+		}
+	}
+
+	@p = @possible;
+	@possible = ();
+	for $p (@p) {
+		if ($cmp_dist{$p} < $bucket && $cmp_polarity{$p} != 2) {
+			push @possible, $p;
+		}
+	}
+
+	@possible = sort compare @possible;
+
+	if (0) {
+		for $p (@possible) {
+			print "preference: $p -- $cmp_polarity{$p} $cmp_same{$p} $cmp_dist{$p}\n";
+		}
+	}
+
+	print "$lat,$lon $lat2,$lon2 ";
+	printf("%.2f ", $cmp_dist{$possible[0]} / $foot);
+	($way, $seg) = split(/ /, $possible[0]);
+	$along = $along{$possible[0]};
+
+	if ($#possible < 0) {
+		print "xxx xxx xxx xxx xxx\n";
+	} else {
+		print "http://www.openstreetmap.org/browse/way/$way " . sprintf("%.4f", $seg + $along) . " $oneway{$way} ";
+		printf("%d", $len{$way});
+		print " $nodes{$way}[$seg]";
+		print "\n";
+	}
+
+	$prevway = $way;
+}
