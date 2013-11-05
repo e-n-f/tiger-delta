@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+
+$pi = 4 * atan2(1, 1);
+$foot = .00000274;
+
+# sqrt(2) because this is diagonal distance
+$buffer = 50 * $foot * sqrt(2);
+
+while (<>) {
+	chomp;
+	@points = split(/ /, $_);
+
+	@lat = ();
+	@lon = ();
+	for ($i = 0; $i <= $#points; $i++) {
+		($lat, $lon) = split(/,/, $points[$i]);
+		last unless $lat =~ /^[0-9.-]+$/;
+
+		$lat[$i] = $lat;
+		$lon[$i] = $lon;
+	}
+
+	$rat = cos($lat[0] * $pi / 180);
+	for ($i = 0; $i < $#lat; $i++) {
+		$ang = atan2($lat[$i + 1] - $lat[$i], ($lon[$i + 1] - $lon[$i]) * $rat);
+
+		printf("%.6f,%.6f ",
+			$lat[$i + 1] + $buffer * sin($ang - $pi / 4),
+			$lon[$i + 1] + $buffer * cos($ang - $pi / 4) / $rat);
+
+		printf("%.6f,%.6f ",
+			$lat[$i + 1] + $buffer * sin($ang + $pi / 4),
+			$lon[$i + 1] + $buffer * cos($ang + $pi / 4) / $rat);
+
+		printf("%.6f,%.6f ",
+			$lat[$i] + $buffer * sin($ang + 3 * $pi / 4),
+			$lon[$i] + $buffer * cos($ang + 3 * $pi / 4) / $rat);
+
+		printf("%.6f,%.6f ",
+			$lat[$i] + $buffer * sin($ang + 5 * $pi / 4),
+			$lon[$i] + $buffer * cos($ang + 5 * $pi / 4) / $rat);
+
+		printf("%.6f,%.6f ",
+			$lat[$i + 1] + $buffer * sin($ang - $pi / 4),
+			$lon[$i + 1] + $buffer * cos($ang - $pi / 4) / $rat);
+
+		printf("\n");
+	}
+}
