@@ -2,20 +2,20 @@
 
 alaska=$(
 	(
-		ls /data/data/tiger/2006/www2.census.gov/geo/tiger/tiger2006se/AK/ |
+		ls tiger/www2.census.gov/geo/tiger/tiger2006se/AK/ |
 		grep TGR |
 		sed 's/.*TGR//' |
 		sed 's/.ZIP//'
 
-		ls /data/data/tiger/2013/www2.census.gov/geo/tiger/TIGERrd13/EDGES/tl_rd13_02* |
-		sed 's/.*rd13_//' |
+		ls tiger/www2.census.gov/geo/tiger/TIGER2013/EDGES/tl_2013_02* |
+		sed 's/.*2013_//' |
 		sed 's/_edges.zip//'
 	) | sort | uniq
 )
 
 ./get-county-delta2 $alaska > county-delta/alaska
 
-find /data/data/tiger/2006/www2.census.gov/geo/tiger/tiger2006se/ |
+find tiger/www2.census.gov/geo/tiger/tiger2006se/ |
 grep TGR |
 sed 's/.*TGR//' |
 sed 's/.ZIP//' |
