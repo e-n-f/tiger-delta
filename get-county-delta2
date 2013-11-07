@@ -78,6 +78,48 @@ for $county (@counties) {
 	%class = ();
 	$edgecount = 0;
 
+	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2013/EDGES/tl_2013_${county}_edges.zip |");
+	while (<IN>) {
+		chomp;
+
+                ($state, $cty, $tlid, $tfidl, $tfidr, $mtfcc, $fullname, $smid, $addrls, $addrle, $addrrs, $addrre) = split(/\|/);
+		next unless ($mtfcc =~ /^S/ || $mtfcc =~ /R/); # roads, railroads
+
+		next unless /polyline/;
+		s/.*polyline //;
+
+		@points = split(/ /, $_);
+
+		$fullname =~ s/ *$//;
+		$fullname =~ s/ +/ /g;
+		$fullname =~ s/'/''/g;
+
+		$edgecount++;
+		$kind{$edgecount} = "new";
+		$name{$edgecount} = $fullname;
+		$class{$edgecount} = $mtfcc;
+		# $file{$edgecount} = $file;
+
+		for ($i = 0; $i < $#points; $i++) {
+			($lon1, $lat1) = split(/,/, $points[$i]);
+			($lon2, $lat2) = split(/,/, $points[$i + 1]);
+
+			$lat1 = sprintf("%.5f", $lat1);
+			$lon1 = sprintf("%.5f", $lon1);
+			$lat2 = sprintf("%.5f", $lat2);
+			$lon2 = sprintf("%.5f", $lon2);
+
+			if ($i == 0) {
+				push @{$points{$edgecount}}, "$lon1 $lat1";
+			}
+
+			push @{$points{$edgecount}}, "$lon2 $lat2";
+			@p = sort("$lon1 $lat1", "$lon2 $lat2");
+			$new{"$p[0] $p[1]"} = 1;
+		}
+	}
+	close(IN);
+
 	$state = substr($county, 0, 2);
 	$statename = $state_number_map{$state};
 	$file = "tiger/www2.census.gov/geo/tiger/tiger2006se/$statename/TGR${county}.ZIP";
@@ -143,48 +185,6 @@ for $county (@counties) {
 			push @{$points{$edgecount}}, "$lons[$i + 1] $lats[$i + 1]";
 			@p = sort("$lons[$i] $lats[$i]", "$lons[$i + 1] $lats[$i + 1]");
 			$old{"$p[0] $p[1]"} = 1;
-		}
-	}
-	close(IN);
-
-	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2013/EDGES/tl_2013_${county}_edges.zip |");
-	while (<IN>) {
-		chomp;
-
-                ($state, $cty, $tlid, $tfidl, $tfidr, $mtfcc, $fullname, $smid, $addrls, $addrle, $addrrs, $addrre) = split(/\|/);
-		next unless ($mtfcc =~ /^S/ || $mtfcc =~ /R/); # roads, railroads
-
-		next unless /polyline/;
-		s/.*polyline //;
-
-		@points = split(/ /, $_);
-
-		$fullname =~ s/ *$//;
-		$fullname =~ s/ +/ /g;
-		$fullname =~ s/'/''/g;
-
-		$edgecount++;
-		$kind{$edgecount} = "new";
-		$name{$edgecount} = $fullname;
-		$class{$edgecount} = $mtfcc;
-		# $file{$edgecount} = $file;
-
-		for ($i = 0; $i < $#points; $i++) {
-			($lon1, $lat1) = split(/,/, $points[$i]);
-			($lon2, $lat2) = split(/,/, $points[$i + 1]);
-
-			$lat1 = sprintf("%.5f", $lat1);
-			$lon1 = sprintf("%.5f", $lon1);
-			$lat2 = sprintf("%.5f", $lat2);
-			$lon2 = sprintf("%.5f", $lon2);
-
-			if ($i == 0) {
-				push @{$points{$edgecount}}, "$lon1 $lat1";
-			}
-
-			push @{$points{$edgecount}}, "$lon2 $lat2";
-			@p = sort("$lon1 $lat1", "$lon2 $lat2");
-			$new{"$p[0] $p[1]"} = 1;
 		}
 	}
 	close(IN);
