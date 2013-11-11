@@ -1,0 +1,30 @@
+#!/bin/sh
+
+db=tiger-2006-2013
+
+#dropdb -U postgres $db
+#createdb -U postgres -T template_postgis $db
+
+for i in county-delta/*
+do
+	echo $i
+
+	(
+		case $i in
+			county-delta/06075)
+				:
+			;;
+
+			county-delta/06037)
+				:
+			;;
+
+			*)
+				cat $i | psql -U postgres $db
+			;;
+		esac
+	) >> log 2>&1
+done
+
+echo "CREATE INDEX tiger_geom ON tiger USING GIST(geom);" | psql -U postgres $db
+
