@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export LC_ALL=C
+
+../datamaps/enumerate -Z11 -z11 tiger-new.shape |
+while read shape z x y rest
+do
+	echo $z $x $y $rest >&2 
+	comm -23 <(../datamaps/render-raster tiger-new.shape $z $x $y | sort -u) <(../datamaps/render-raster -L3 northam.shape $z $x $y | sort -u)
+done
