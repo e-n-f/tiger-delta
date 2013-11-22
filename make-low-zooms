@@ -2,7 +2,7 @@
 
 export LC_ALL=C
 
-../datamaps/enumerate -Z11 -z11 tiger-new.shape |
+../datamaps/enumerate -Z12 -z12 tiger-new.shape |
 while read shape z x y rest
 do
 	echo $z $x $y $rest >&2 
