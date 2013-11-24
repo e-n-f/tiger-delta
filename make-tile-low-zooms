@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dir=$(basename $1)
+mkdir -p tiles/$dir/$2/$3
+echo "$* -> tiles/$dir/$2/$3"
+/data2/data/github/datamaps/render -B11:.10:1.23 -t 0 -g -c FFFF00 $1 $2 $3 $4 | pngquant 128 > tiles/$dir/$2/$3/$4.png
