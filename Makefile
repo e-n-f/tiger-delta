@@ -41,13 +41,17 @@ northam.snap: $(PBF) osmconvert snap
 
 # Streets in new TIGER that aren't in old TIGER, and
 # streets in old TIGER that aren't in new TIGER
-county-delta/78010: shpcat.class get-all2 get-county-delta2 get-county-delta-wrap2
+county-delta/78010: shpcat.class dbfcat.class get-all2 get-county-delta2 get-county-delta-wrap2
 	./get-all2
 
 
 # Converts ESRI shapefiles to text
 shpcat.class: shpcat.java
 	javac shpcat.java
+
+# Converts dBase III to text
+dbfcat.class: dbfcat.java
+	javac dbfcat.java
 
 # Attaches the locations of OSM nodes to segments of the ways that include them
 snap: snap.c
