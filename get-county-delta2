@@ -38,6 +38,53 @@ use utf8;
 	"R1052" => "railway=funicular",
 );
 
+open(IN, "tiger_abbrev.csv");
+while (<IN>) {
+	chomp;
+	($code, $expanded) = split(/,/);
+	$abbrev_typ{$code} = $expanded;
+}
+close(IN);
+
+%abbrev_dir = (
+	"11" => "North",
+	"12" => "South",
+	"13" => "East",
+	"14" => "West",
+	"15" => "Northeast",
+	"16" => "Northwest",
+	"17" => "Southeast",
+	"18" => "Southwest",
+	"19" => "Norte",
+	"20" => "Sur",
+	"21" => "Eeste",
+	"22" => "Oeste",
+	"23" => "Noreste",
+	"24" => "Noroeste",
+	"25" => "Sudeste",
+	"26" => "Sudoeste",
+);
+
+%abbrev_qual = (
+	"11" => "Access",
+	"12" => "Alternate",
+	"13" => "Business",
+	"14" => "Bypass",
+	"15" => "Connector",
+	"16" => "Extended",
+	"17" => "Extension",
+	"18" => "Historic",
+	"19" => "Loop",
+	"20" => "Old",
+	"21" => "Private",
+	"22" => "Public",
+	"23" => "Scenic",
+	"24" => "Spur",
+	"25" => "Ramp",
+	"26" => "Underpass",
+	"27" => "Overpass",
+);
+
 if ($#ARGV >= 0) {
 	@counties = @ARGV;
 } else {
@@ -77,6 +124,47 @@ $edgecount = 0;
 for $county (@counties) {
 	print STDERR "county $county\n";
 
+	open(IN, "java dbfcat tiger/www2.census.gov/geo/tiger/TIGER2013/FEATNAMES/tl_2013_${county}_featnames.zip |");
+	$_ = <IN>;
+	chomp;
+	@columns = split(/\|/);
+	while (<IN>) {
+		chomp;
+		@d = split(/\|/);
+
+		%field = ();
+		for ($i = 0; $i <= $#d; $i++) {
+			# print "$i $columns[$i] $d[$i]\n";
+			$d[$i] =~ s/^ *//;
+			$d[$i] =~ s/ *$//;
+			$field{$columns[$i]} = $d[$i];
+		}
+
+		$name = 
+			"$abbrev_dir{$field{'PREDIR'}} " .
+			"$abbrev_typ{$field{'PRETYP'}} " .
+			"$abbrev_qual{$field{'PREQUAL'}} " .
+			"$field{'NAME'} " .
+			"$abbrev_dir{$field{'SUFDIR'}} " .
+			"$abbrev_typ{$field{'SUFTYP'}} " .
+			"$abbrev_qual{$field{'SUFQUAL'}} ";
+
+		$name =~ s/ +/ /g;
+		$name =~ s/^ *//;
+		$name =~ s/ *$//;
+
+		if ($name ne "")  {
+			if ($featname{$field{'TLID'}} eq "") {
+				$featname{$field{'TLID'}} = $name;
+			} else {
+				$featname{$field{'TLID'}} .= ";$name";
+			}
+		}
+
+		# print "$field{'TLID'} => $featname{$field{'TLID'}}\n";
+	}
+	close(IN);
+
 	open(IN, "java shpcat tiger/www2.census.gov/geo/tiger/TIGER2013/EDGES/tl_2013_${county}_edges.zip |");
 	while (<IN>) {
 		chomp;
@@ -91,6 +179,14 @@ for $county (@counties) {
 
 		$fullname =~ s/ *$//;
 		$fullname =~ s/ +/ /g;
+
+		$tlid =~ s/^ *//;
+		$tlid =~ s/ *$//;
+
+		if ($featname{$tlid} ne "") {
+			$fullname = $featname{$tlid};
+		}
+
 		$fullname =~ s/'/''/g;
 
 		$edgecount++;
