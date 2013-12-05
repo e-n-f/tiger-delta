@@ -154,10 +154,10 @@ for $county (@counties) {
 		$name =~ s/ *$//;
 
 		if ($name ne "")  {
-			if ($featname{$field{'TLID'}} eq "") {
-				$featname{$field{'TLID'}} = $name;
+			if ($featname{$field{'TLID'}}{$field{'PAFLAG'}} eq "") {
+				$featname{$field{'TLID'}}{$field{'PAFLAG'}} = $name;
 			} else {
-				$featname{$field{'TLID'}} .= ";$name";
+				$featname{$field{'TLID'}}{$field{'PAFLAG'}} .= ";$name";
 			}
 		}
 
@@ -183,8 +183,12 @@ for $county (@counties) {
 		$tlid =~ s/^ *//;
 		$tlid =~ s/ *$//;
 
-		if ($featname{$tlid} ne "") {
-			$fullname = $featname{$tlid};
+		if (defined $featname{$tlid}) {
+			if (defined $featname{$tlid}{'A'}) {
+				$fullname = "$featname{$tlid}{'P'};$featname{$tlid}{'A'}";
+			} else {
+				$fullname = $featname{$tlid}{'P'};
+			}
 		}
 
 		$fullname =~ s/'/''/g;
