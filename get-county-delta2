@@ -121,6 +121,8 @@ EOF
 %class = ();
 $edgecount = 0;
 
+$maxname = 23;
+
 for $county (@counties) {
 	print STDERR "county $county\n";
 
@@ -184,9 +186,9 @@ for $county (@counties) {
 		$tlid =~ s/ *$//;
 
 		if (defined $featname{$tlid}) {
-			if (defined $featname{$tlid}{'A'}) {
+			if (defined $featname{$tlid}{'A'} && length("$featname{$tlid}{'P'};$featname{$tlid}{'A'}") <= $maxname) {
 				$fullname = "$featname{$tlid}{'P'};$featname{$tlid}{'A'}";
-			} else {
+			} elsif (length($featname{$tlid}{'P'}) <= $maxname) {
 				$fullname = $featname{$tlid}{'P'};
 			}
 		}
