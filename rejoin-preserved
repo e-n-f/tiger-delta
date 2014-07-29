@@ -1,0 +1,70 @@
+#!/usr/bin/perl
+
+sub out {
+	return if $#where < 0;
+
+	if ($within) {
+		print ",\n";
+	}
+
+	print '{ "type": "Feature", "properties": { ';
+	print "\"name\": \"$oname\", \"way\": $oway";
+	print ' }, "geometry": { "type": "LineString", "coordinates": [';
+
+	for ($i = 0; $i <= $#where; $i++) {
+		if ($i == 0) {
+			# first
+		} elsif ($seg[$i] ne $seg[$i - 1] + 1) {
+			# restarting after gap
+
+			print "] } },\n";
+			print '{ "type": "Feature", "properties": { ';
+			print "\"name\": \"$oname\", \"way\": $oway";
+			print ' }, "geometry": { "type": "LineString", "coordinates": [';
+		} else {
+			# continuing
+
+			($lat1, $lon1, $lat2, $lon2) = split(/[:,]/, $where);
+			print ", [ $lon2, $lat2 ]";
+			next;
+		}
+
+		($lat1, $lon1, $lat2, $lon2) = split(/[:,]/, $where);
+		print "[ $lon1, $lat1 ], [ $lon2, $lat2 ]";
+	}
+
+	print "] } }";
+	$within = 1;
+}
+
+print <<EOF
+{
+  "type": "FeatureCollection",
+  "features": [
+EOF
+;
+
+while (<>) {
+	chomp;
+
+	($where, $kind, $slash, $way, $seg, $name) = split(/ /);
+
+	$name =~ s/"//g;
+	$name =~ s/_/ /g;
+
+	if ($way ne $oway) {
+		out();
+
+		@where = ();
+		@seg = ();
+	}
+
+	$oname = $name;
+	$oway = $way;
+	push @where, $where;
+	push @seg, $seg;
+}
+
+out();
+
+print "\n] }\n";

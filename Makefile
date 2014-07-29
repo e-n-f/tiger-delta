@@ -5,6 +5,10 @@ PBF = /data3/data/osm/geofabrik-20140728/north-america-latest.osm.pbf
 all: preserved.shape/meta northam.shape/meta new.shape/meta
 
 
+# Obsolete streets from old TIGER that are still preserved in OSM, as GeoJSON
+preserved.json: preserved.sort rejoin-preserved
+	./rejoin-preserved preserved.sort > preserved.json
+
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
 preserved.shape/meta: preserved.sort ../datamaps/encode
 	rm -rf preserved.shape; cat preserved.sort | sed 's/:/ /' | ../datamaps/encode -o preserved.shape -z20
