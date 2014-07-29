@@ -206,6 +206,8 @@ static void XMLCALL end(void *data, const char *el) {
 					printf("%s %s 4:11 // ", p2, p1);
 				}
 
+				printf("%d %d ", theway, i);
+
 				char *cp = strstr(tags, ";name=");
 
 				if (cp != NULL) {
