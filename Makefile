@@ -11,7 +11,7 @@ preserved.shape/meta: preserved.sort ../datamaps/encode
 
 # Obsolete streets from old TIGER that are still preserved in OSM
 preserved.sort: old.sort northam.snap.sort
-	LC_ALL=C join <(LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort)) northam.snap.sort > preserved.sort
+	LC_ALL=C join <(LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort)) northam.snap.sort | sort -k4 > preserved.sort
 
 
 # Current OSM, as shape
@@ -41,8 +41,8 @@ northam.snap: $(PBF) osmconvert snap
 
 # Streets in new TIGER that aren't in old TIGER, and
 # streets in old TIGER that aren't in new TIGER
-county-delta/78010: shpcat.class dbfcat.class get-all2 get-county-delta2 get-county-delta-wrap2
-	./get-all2
+county-delta/78010: shpcat.class dbfcat.class get-all get-county-delta2 get-county-delta-wrap2
+	./get-all
 
 
 # Converts ESRI shapefiles to text
