@@ -11,7 +11,7 @@ preserved.shape/meta: preserved.sort ../datamaps/encode
 
 # Obsolete streets from old TIGER that are still preserved in OSM
 preserved.sort: old.sort northam.snap.sort
-	LC_ALL=C join <(LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort)) northam.snap.sort | sort -k4 > preserved.sort
+	LC_ALL=C join <(LC_ALL=C comm -12 <(awk '{print $$1}' old.sort) <(awk '{print $$1}' northam.snap.sort)) northam.snap.sort | LC_ALL=C sort -k4 > preserved.sort
 
 
 # Current OSM, as shape
