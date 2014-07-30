@@ -3,10 +3,6 @@
 sub out {
 	return if $#where < 0;
 
-	if ($within) {
-		print ",\n";
-	}
-
 	print '{ "type": "Feature", "properties": { ';
 	print "\"name\": \"$oname\", \"way\": $oway";
 	print ' }, "geometry": { "type": "LineString", "coordinates": [';
@@ -17,7 +13,7 @@ sub out {
 		} elsif ($seg[$i] ne $seg[$i - 1] + 1) {
 			# restarting after gap
 
-			print "] } },\n";
+			print "] } }\n";
 			print '{ "type": "Feature", "properties": { ';
 			print "\"name\": \"$oname\", \"way\": $oway";
 			print ' }, "geometry": { "type": "LineString", "coordinates": [';
@@ -33,16 +29,10 @@ sub out {
 		print "[ $lon1, $lat1 ], [ $lon2, $lat2 ]";
 	}
 
-	print "] } }";
+	print "] } }\n";
 	$within = 1;
 }
 
-print <<EOF
-{
-  "type": "FeatureCollection",
-  "features": [
-EOF
-;
 
 while (<>) {
 	chomp;
@@ -51,6 +41,7 @@ while (<>) {
 
 	$name =~ s/"//g;
 	$name =~ s/_/ /g;
+	$name =~ s/\\/\\\\/g;
 
 	if ($way ne $oway) {
 		out();
@@ -67,4 +58,3 @@ while (<>) {
 
 out();
 
-print "\n] }\n";
