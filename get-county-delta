@@ -95,16 +95,17 @@ for $county (@counties) {
 	}
 	close(IN);
 
-	open(IN, "java shpcat /data/data/tiger/2013/www2.census.gov/geo/tiger/TIGERrd13/EDGES/tl_rd13_${county}_edges.zip |");
+	open(IN, "java shpcat /data/data/tiger/2013/www2.census.gov/geo/tiger/TIGER2013/ROADS/tl_2013_${county}_roads.zip |");
 	while (<IN>) {
 		chomp;
 
-                ($state, $cty, $tlid, $tfidl, $tfidr, $mtfcc, $fullname, $smid, $addrls, $addrle, $addrrs, $addrre) = split(/\|/);
+                ($tlid, $fullname, $rttyp, $mtfcc) = split(/\|/);
 		next unless ($mtfcc =~ /^S/); #  || $mtfcc =~ /R/); # roads, railroads
 
 		next unless /polyline/;
 		s/.*polyline //;
 		$tlid =~ s/^ *//;
+		$tlid =~ s/ *$//;
 
 		@points = split(/ /, $_);
 

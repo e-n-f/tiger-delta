@@ -15,7 +15,7 @@ missing.json: missing.sort rejoin-preserved
 
 # Streets from TIGER missing from OSM
 missing.sort: ../vector-subtract/osm-diff
-	LC_ALL=C sort -k4 ../vector-subtract/osm-diff > missing.sort
+	LC_ALL=C sort -k5 ../vector-subtract/osm-diff > missing.sort
 
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
 preserved.shape/meta: preserved.sort ../datamaps/encode
@@ -53,7 +53,7 @@ northam.snap: $(PBF) osmconvert snap
 
 # Streets in new TIGER that aren't in old TIGER, and
 # streets in old TIGER that aren't in new TIGER
-county-delta/78010: shpcat.class dbfcat.class get-all get-county-delta2 get-county-delta-wrap2
+county-delta/78010: shpcat.class dbfcat.class get-all get-county-delta get-county-delta-wrap
 	./get-all
 
 

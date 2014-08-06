@@ -1,16 +1,17 @@
 #!/usr/bin/perl
 
 sub out {
-	return if $#where < 0;
+	@s = sort { $a <=> $b } keys(%where);
+	return if $#s < 0;
 
 	print '{ "type": "Feature", "properties": { ';
 	print "\"name\": \"$oname\", \"way\": $oway";
 	print ' }, "geometry": { "type": "LineString", "coordinates": [';
 
-	for ($i = 0; $i <= $#where; $i++) {
+	for ($i = 0; $i <= $#s; $i++) {
 		if ($i == 0) {
 			# first
-		} elsif ($seg[$i] ne $seg[$i - 1] + 1) {
+		} elsif ($s[$i] ne $s[$i - 1] + 1) {
 			# restarting after gap
 
 			print "] } }\n";
@@ -20,7 +21,7 @@ sub out {
 		} else {
 			# continuing
 
-			($lat1, $lon1, $lat2, $lon2) = split(/[:,]/, $where);
+			($lat1, $lon1, $lat2, $lon2) = split(/[:,]/, $where{$s[$i]});
 			print ", [ $lon2, $lat2 ]";
 			next;
 		}
@@ -46,14 +47,13 @@ while (<>) {
 	if ($way ne $oway) {
 		out();
 
-		@where = ();
-		@seg = ();
+		%where = ();
 	}
 
 	$oname = $name;
 	$oway = $way;
-	push @where, $where;
-	push @seg, $seg;
+
+	$where{$seg} = $where;
 }
 
 out();
