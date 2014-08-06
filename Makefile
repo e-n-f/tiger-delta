@@ -9,6 +9,14 @@ all: preserved.shape/meta northam.shape/meta new.shape/meta
 preserved.json: preserved.sort rejoin-preserved
 	./rejoin-preserved preserved.sort > preserved.json
 
+# Streets from TIGER missing from OSM, as GeoJSON
+missing.json: missing.sort rejoin-preserved
+	cat missing.sort | sed 's/ /:/' | ./rejoin-preserved > missing.json
+
+# Streets from TIGER missing from OSM
+missing.sort: ../vector-subtract/osm-diff
+	LC_ALL=C sort -k4 ../vector-subtract/osm-diff > missing.sort
+
 # Obsolete streets from old TIGER that are still preserved in OSM, as datamaps
 preserved.shape/meta: preserved.sort ../datamaps/encode
 	rm -rf preserved.shape; cat preserved.sort | sed 's/:/ /' | ../datamaps/encode -o preserved.shape -z20

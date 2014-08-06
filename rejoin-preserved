@@ -37,7 +37,7 @@ sub out {
 while (<>) {
 	chomp;
 
-	($where, $kind, $slash, $way, $seg, $name) = split(/ /);
+	($where, $kind, $slash, $way, $seg, $name) = split(/ /, $_, 6);
 
 	$name =~ s/"//g;
 	$name =~ s/_/ /g;
