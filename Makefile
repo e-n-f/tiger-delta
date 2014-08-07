@@ -11,7 +11,7 @@ preserved.json: preserved.sort rejoin-preserved
 
 # Streets from TIGER missing from OSM, as GeoJSON
 missing.json: missing.sort rejoin-preserved
-	cat missing.sort | sed 's/ /:/' | ./rejoin-preserved > missing.json
+	cat missing.sort | sed 's/ /:/' | uniq | ./rejoin-preserved > missing.json
 
 # Streets from TIGER missing from OSM
 missing.sort: ../vector-subtract/osm-diff

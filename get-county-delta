@@ -125,6 +125,7 @@ for $county (@counties) {
 			$new{"$p[0] $p[1]"} = 1;
 			$tlid{"$p[0] $p[1]"} = $tlid;
 			$seg{"$p[0] $p[1]"} = $i;
+			$canon{"$p[0] $p[1]"} = "$lat1,$lon1 $lat2,$lon2";
 			$fullname{"$p[0] $p[1]"} = $fullname;
 		}
 	}
@@ -132,7 +133,7 @@ for $county (@counties) {
 
 	for $n (keys(%new)) {
 		unless ($old{$n}) {
-			$out .= "$n 4:2 // $tlid{$n} $seg{$n} $fullname{$n}\n";
+			$out .= "$canon{$n} 4:2 // $tlid{$n} $seg{$n} $fullname{$n}\n";
 		}
 	}
 
