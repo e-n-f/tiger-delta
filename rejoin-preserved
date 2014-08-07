@@ -13,12 +13,9 @@ sub out {
 			if ($here eq "nothing") {
 				print '{ "type": "Feature", "properties": { ';
 				print "\"name\": \"$oname\", \"way\": $oway";
-				print ' }, "geometry": { "type": "LineString", "coordinates": [';
+				print ' }, "geometry": { "type": "MultiLineString", "coordinates": [ [';
 			} else {
-				print "] } }\n";
-				print '{ "type": "Feature", "properties": { ';
-				print "\"name\": \"$oname\", \"way\": $oway";
-				print ' }, "geometry": { "type": "LineString", "coordinates": [';
+				print " ], [ ";
 			}
 
 			print "[ $lon1, $lat1 ], [ $lon2, $lat2 ]";
@@ -30,7 +27,7 @@ sub out {
 	}
 
 	if ($here ne "nothing") {
-		print "] } }\n";
+		print "] ] } }\n";
 	}
 }
 
