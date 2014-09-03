@@ -7,9 +7,9 @@ alaska=$(
 		sed 's/.*TGR//' |
 		sed 's/.ZIP//'
 
-		ls /data/data/tiger/2013/www2.census.gov/geo/tiger/TIGERrd13/EDGES/tl_rd13_02* |
-		sed 's/.*rd13_//' |
-		sed 's/_edges.zip//'
+		ls /data/data/tiger/2014/www2.census.gov/geo/tiger/TIGER2014/ROADS/tl_2014_02* |
+		sed 's/.*tl_2014_//' |
+		sed 's/_roads.zip//'
 	) | sort | uniq
 )
 
