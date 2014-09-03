@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir county-delta-2013-2014
+
+ls /data/data/tiger/2014/www2.census.gov/geo/tiger/TIGER2014/ROADS/tl_2014_*.zip |
+sed 's/_roads.zip//' |
+sed 's/.*tl_2014_//' |
+xargs -P 8 -n 1 ./get-county-delta-wrap-2013-2014

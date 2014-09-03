@@ -1,0 +1,3 @@
+#!/bin/sh
+
+./get-county-delta-2013-2014 $1 > county-delta-2013-2014/$1
