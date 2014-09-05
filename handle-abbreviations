@@ -1,0 +1,59 @@
+#!/usr/bin/perl
+
+open(IN, "abbreviations.tab");
+while (<IN>) {
+	if (/Direction Code    Expanded Full Text   Directional Abbreviation   Spanish   Translation/) {
+		while (<IN>) {
+			chomp;
+			last if /^$/;
+
+			($code, $text, $abbrev, $spanish, $translation) = split(/  +/);
+			$abbrev{'direction'}{$abbrev} = $text;
+		}
+	}
+
+	if (/Qualifier Code   Expanded Full Text   Display Name Abbreviation   Prefix Qualifier   Suffix Qualifier/) {
+		while (<IN>) {
+			chomp;
+			last if /^$/;
+
+			($code, $text, $abbrev, $prefix, $suffix) = split(/  +/);
+			if ($prefix eq "Y") {
+				$abbrev{'prefix-qualifier'}{$abbrev} = $text;
+			}
+			if ($suffix eq "Y") {
+				$abbrev{'suffix-qualifier'}{$abbrev} = $text;
+			}
+		}
+	}
+
+	if (/Type Code    Expanded Full Text   Display Name abbreviation   Spanish   Translation          Prefix Type   Suffix/) {
+		while (<IN>) {
+			chomp;
+			last if /^$/;
+
+			($code, $text, $abbrev, $spanish, $translation, $prefix, $suffix) = split(/  +/);
+
+			if ($spanish ne "Yes") {
+				$prefix = $spanish;
+				$suffix = $translation;
+
+				$spanish = "";
+				$translation = "";
+			}
+
+			if ($prefix eq "Y") {
+				$abbrev{'prefix-type'}{$abbrev} = $text;
+			}
+			if ($suffix eq "Y") {
+				$abbrev{'suffix-type'}{$abbrev} = $text;
+			}
+		}
+	}
+}
+
+for $a (sort(keys(%abbrev))) {
+	for $b (sort(keys(%{$abbrev{$a}}))) {
+		print "$a $b => $abbrev{$a}{$b}\n";
+	}
+}
