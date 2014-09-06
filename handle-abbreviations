@@ -8,7 +8,11 @@ while (<IN>) {
 			last if /^$/;
 
 			($code, $text, $abbrev, $spanish, $translation) = split(/  +/);
-			$abbrev{'direction'}{$abbrev} = $text;
+
+			if ($spanish ne "Y") {
+				$abbrev{'PREDIRABRV'}{$abbrev} = $text;
+				$abbrev{'SUFDIRABRV'}{$abbrev} = $text;
+			}
 		}
 	}
 
@@ -19,10 +23,10 @@ while (<IN>) {
 
 			($code, $text, $abbrev, $prefix, $suffix) = split(/  +/);
 			if ($prefix eq "Y") {
-				$abbrev{'prefix-qualifier'}{$abbrev} = $text;
+				$abbrev{'PREQUALABR'}{$abbrev} = $text;
 			}
 			if ($suffix eq "Y") {
-				$abbrev{'suffix-qualifier'}{$abbrev} = $text;
+				$abbrev{'SUFQUALABR'}{$abbrev} = $text;
 			}
 		}
 	}
@@ -43,17 +47,62 @@ while (<IN>) {
 			}
 
 			if ($prefix eq "Y") {
-				$abbrev{'prefix-type'}{$abbrev} = $text;
+				$abbrev{'PRETYPABRV'}{$abbrev} = $text;
 			}
 			if ($suffix eq "Y") {
-				$abbrev{'suffix-type'}{$abbrev} = $text;
+				$abbrev{'SUFTYPABRV'}{$abbrev} = $text;
 			}
 		}
 	}
 }
+close(IN);
 
-for $a (sort(keys(%abbrev))) {
-	for $b (sort(keys(%{$abbrev{$a}}))) {
-		print "$a $b => $abbrev{$a}{$b}\n";
+if (0) {
+	for $a (sort(keys(%abbrev))) {
+		for $b (sort(keys(%{$abbrev{$a}}))) {
+			print "$a $b => $abbrev{$a}{$b}\n";
+		}
+	}
+}
+
+$_ = <>;
+chomp;
+@fields = split(/\|/, $_);
+
+for ($i = 0; $i <= $#fields; $i++) {
+	# print "map: $fields[$i] -> $i\n";
+	$map{$fields[$i]} = $i;
+}
+
+while (<>) {
+	chomp;
+	@fields = split(/\|/, $_);
+
+	# for $field ('PREDIR', 'PREDIRABRV', 'PRETYP', 'PRETYPABRV', 'PREQUAL', 'PREQUALABR', 'NAME', 'SUFDIR', 'SUFDIRABRV', 'SUFTYP', 'SUFTYPABRV', 'SUFQUAL', 'SUFQUALABR') {
+
+	$out = "";
+	for $field ('PREDIRABRV', 'PRETYPABRV', 'PREQUALABR', 'NAME', 'SUFDIRABRV', 'SUFTYPABRV', 'SUFQUALABR') {
+		$t = $fields[$map{$field}];
+		$t =~ s/ *$//;
+
+		if ($abbrev{$field}{$t} ne "") {
+			$t = $abbrev{$field}{$t};
+		}
+
+		$out .= "$t ";
+	}
+
+	$out =~ s/^ *//;
+	$out =~ s/ *$//;
+	$out =~ s/ +/ /g;
+
+	$fn = $fields[$map{'FULLNAME'}];
+	$fn =~ s/ *$//;
+
+	if ($fn ne $out) {
+		if (!$seen{$fn}) {
+			print "$fn|$out\n";
+			$seen{$fn} = 1;
+		}
 	}
 }
