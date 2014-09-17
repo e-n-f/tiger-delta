@@ -10,6 +10,8 @@
 #include <math.h>
 #include <time.h>
 
+int join = 0;
+
 struct node {
 	unsigned id; // still just over 2^31
 	int lat;
@@ -190,21 +192,14 @@ static void XMLCALL end(void *data, const char *el) {
 		if (strstr(tags, ";highway=") != NULL ) {
 			int i;
 
-			for (i = 0; i + 1 < thenodecount; i++) {
-				char p1[2000], p2[2000];
-
-				sprintf(p1, "%.5lf,%.5lf", thenodes[i]->lat / 1000000.0,
-							   thenodes[i]->lon / 1000000.0);
-				sprintf(p2, "%.5lf,%.5lf", thenodes[i + 1]->lat / 1000000.0,
-							   thenodes[i + 1]->lon / 1000000.0);
-
-				if (strcmp(p1, p2) < 0) {
-					printf("%s %s 4:11 // ", p1, p2);
-				} else {
-					printf("%s %s 4:11 // ", p2, p1);
+			if (join) {
+				for (i = 0; i < thenodecount; i++) {
+					printf("%.5lf,%.5lf ", thenodes[i]->lat / 1000000.0,
+								   thenodes[i]->lon / 1000000.0);
 				}
 
-				printf("%d %d ", theway, i);
+				printf("4:11 // ");
+				printf("%d %d ", theway, 0);
 
 				char *cp = strstr(tags, ";name=");
 
@@ -221,6 +216,39 @@ static void XMLCALL end(void *data, const char *el) {
 				}
 
 				putchar('\n');
+			} else {
+				for (i = 0; i + 1 < thenodecount; i++) {
+					char p1[2000], p2[2000];
+
+					sprintf(p1, "%.5lf,%.5lf", thenodes[i]->lat / 1000000.0,
+								   thenodes[i]->lon / 1000000.0);
+					sprintf(p2, "%.5lf,%.5lf", thenodes[i + 1]->lat / 1000000.0,
+								   thenodes[i + 1]->lon / 1000000.0);
+
+					if (strcmp(p1, p2) < 0) {
+						printf("%s %s 4:11 // ", p1, p2);
+					} else {
+						printf("%s %s 4:11 // ", p2, p1);
+					}
+
+					printf("%d %d ", theway, i);
+
+					char *cp = strstr(tags, ";name=");
+
+					if (cp != NULL) {
+						cp += 6;
+
+						for (; *cp != '\0' && *cp != ';' && *cp != '\n'; cp++) {
+							if (*cp == ' ') {
+								putchar('_');
+							} else {
+								putchar(*cp);
+							}
+						}
+					}
+
+					putchar('\n');
+				}
 			}
 		}
 
@@ -229,6 +257,19 @@ static void XMLCALL end(void *data, const char *el) {
 }
 
 int main(int argc, char *argv[]) {
+	int i;
+	while ((i = getopt(argc, argv, "j")) != -1) {
+		switch (i) {
+		case 'j':
+			join = 1;
+			break;
+
+		default:
+			fprintf(stderr, "error\n");
+			exit(EXIT_FAILURE);
+		}
+	}
+
 	if (tmpnam(tmpfname) == NULL) {
 		perror(tmpfname);
 		exit(EXIT_FAILURE);
