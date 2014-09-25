@@ -2,7 +2,8 @@ SHELL = /bin/bash
 
 PBF = /data3/data/osm/geofabrik-20140728/north-america-latest.osm.pbf
 
-all: preserved.shape/meta northam.shape/meta new.shape/meta
+all: county-delta-2006-2014/78010
+# all: preserved.shape/meta northam.shape/meta new.shape/meta
 
 
 # Obsolete streets from old TIGER that are still preserved in OSM, as GeoJSON
@@ -56,6 +57,10 @@ northam.snap: $(PBF) osmconvert snap
 county-delta/78010: shpcat.class dbfcat.class get-all get-county-delta get-county-delta-wrap
 	./get-all
 
+# Streets in new TIGER that aren't in old TIGER, and
+# streets in old TIGER that aren't in new TIGER
+county-delta-2006-2014/78010: shpcat.class dbfcat.class get-all-2006-2014 get-county-delta-2006-2014 get-county-delta-wrap-2006-2014
+	./get-all-2006-2014
 
 # Converts ESRI shapefiles to text
 shpcat.class: shpcat.java

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+mkdir -p county-delta-2006-2014
+
+alaska=$(
+	(
+		ls /data/data/tiger/2006/www2.census.gov/geo/tiger/tiger2006se/AK/ |
+		grep TGR |
+		sed 's/.*TGR//' |
+		sed 's/.ZIP//'
+
+		ls /data/data/tiger/2014/www2.census.gov/geo/tiger/TIGER2014/ROADS/tl_2014_02* |
+		sed 's/.*tl_2014_//' |
+		sed 's/_roads.zip//'
+	) | sort | uniq
+)
+
+./get-county-delta-2006-2014 $alaska > county-delta-2006-2014/alaska
+
+find /data/data/tiger/2006/www2.census.gov/geo/tiger/tiger2006se/ |
+grep TGR |
+sed 's/.*TGR//' |
+sed 's/.ZIP//' |
+grep -v '^02' |
+sort |
+xargs -P 8 -n 1 ./get-county-delta-wrap-2006-2014
