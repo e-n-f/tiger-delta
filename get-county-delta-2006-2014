@@ -126,6 +126,12 @@ for $county (@counties) {
 			$fullname = $abbrev{$fullname};
 		}
 
+		$fullname =~ s/\\/\\\\/g;
+		$fullname =~ s/"/\\"/g;
+
+		$state = 0;
+		$within = 0;
+
 		for ($i = 0; $i < $#points; $i++) {
 			($lon1, $lat1) = split(/,/, $points[$i]);
 			($lon2, $lat2) = split(/,/, $points[$i + 1]);
@@ -136,26 +142,39 @@ for $county (@counties) {
 			$lon2 = sprintf("%.5f", $lon2);
 
 			@p = sort("$lat1,$lon1", "$lat2,$lon2");
-			$new{"$p[0] $p[1]"} = 1;
-			$tlid{"$p[0] $p[1]"} = $tlid;
-			$seg{"$p[0] $p[1]"} = $i;
-			$canon{"$p[0] $p[1]"} = "$lat1,$lon1 $lat2,$lon2";
-			$fullname{"$p[0] $p[1]"} = $fullname;
+			if ($old{"$p[0] $p[1]"}) {
+				$wantstate = "both";
+			} else {
+				$wantstate = "new";
+			}
+
+			if ($state ne $wantstate) {
+				if ($within) {
+					print "] } }\n";
+				}
+
+				$state = $wantstate;
+
+				print "{ \"type\": \"Feature\", \"properties\": { ";
+				print "\"fullname\": \"$fullname\", \"class\": \"$mtfcc\", \"age\": \"$state\" }, ";
+				print "\"geometry\": { \"type\": \"LineString\", \"coordinates\": [ ";
+
+				print "[ $lon1,$lat1 ] ";
+				$within = 1;
+			}
+
+			print ", [ $lon2,$lat2 ]";
+
+			#$new{"$p[0] $p[1]"} = 1;
+			#$tlid{"$p[0] $p[1]"} = $tlid;
+			#$seg{"$p[0] $p[1]"} = $i;
+			#$canon{"$p[0] $p[1]"} = "$lat1,$lon1 $lat2,$lon2";
+			#$fullname{"$p[0] $p[1]"} = $fullname;
+		}
+
+		if ($within) {
+			print "] } }\n";
 		}
 	}
 	close(IN);
-
-	for $n (keys(%new)) {
-		unless ($old{$n}) {
-			$out .= "$canon{$n} 4:2 // $tlid{$n} $seg{$n} $fullname{$n}\n";
-		}
-	}
-
-	for $o (keys(%old)) {
-		unless ($new{$o}) {
-			$out .= "$o 4:11 // $fullname{$o}\n";
-		}
-	}
 }
-
-print $out;
