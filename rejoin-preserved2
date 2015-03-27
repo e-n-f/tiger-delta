@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+sub out {
+	@s = sort { $a <=> $b } keys(%where);
+	return if $#s < 0;
+
+	$here = "nothing";
+
+	for ($i = 0; $i <= $#s; $i++) {
+		($lat1, $lon1, $lat2, $lon2) = split(/[:,]/, $where{$s[$i]});
+
+		if ($here ne "$lon1,$lat1") {
+			if ($here eq "nothing") {
+				print '{ "type": "Feature", "properties": { ';
+				print "\"name\": \"$oname\", \"way\": $oway, \"class\": \"$class\"";
+				print ' }, "geometry": { "type": "MultiLineString", "coordinates": [ [';
+			} else {
+				print " ], [ ";
+			}
+
+			print "[ $lon1, $lat1 ], [ $lon2, $lat2 ]";
+		} else {
+			print ", [ $lon2, $lat2 ]";
+		}
+
+		$here = "$lon2,$lat2";
+	}
+
+	if ($here ne "nothing") {
+		print "] ] } }\n";
+	}
+}
+
+
+while (<>) {
+	chomp;
+
+	($start, $end, $kind, $slash, $way, $seg, $class, $name) = split(/ /, $_, 8);
+	$where = "$start:$end";
+
+	$name =~ s/"//g;
+	$name =~ s/_/ /g;
+	$name =~ s/\\/\\\\/g;
+
+	if ($way ne $oway) {
+		out();
+
+		%where = ();
+	}
+
+	$oname = $name;
+	$oway = $way;
+
+	while ($where{$seg} ne "") {
+		# print "change from $seg ";
+		$seg = $seg . "x" . rand(100);
+		# print "to $seg\n";
+	}
+
+	$where{$seg} = $where;
+}
+
+out();
+
