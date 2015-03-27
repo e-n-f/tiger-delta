@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+while (<>) {
+	chomp;
+
+	($tlid, $fullname, $rttyp, $mtfcc) = split(/\|/);
+	next unless ($mtfcc =~ /^S/); #  || $mtfcc =~ /R/); # roads, railroads
+
+	next unless /polyline/;
+	s/.*polyline //;
+	$tlid =~ s/^ *//;
+	$tlid =~ s/ *$//;
+
+	@points = split(/ /, $_);
+
+	$fullname =~ s/ *$//;
+	$fullname =~ s/ +/ /g;
+
+	for ($i = 0; $i < $#points; $i++) {
+		($lon1, $lat1) = split(/,/, $points[$i]);
+		($lon2, $lat2) = split(/,/, $points[$i + 1]);
+
+		print "$lat1,$lon1 $lat2,$lon2 4:2 // $tlid $i $mtfcc $fullname\n";
+	}
+}
