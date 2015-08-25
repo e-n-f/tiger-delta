@@ -77,3 +77,6 @@ snap: snap.c
 # Converts OSM PBF to XML
 osmconvert: osmconvert.c
 	cc -g -Wall -O3 -o osmconvert osmconvert.c -lz
+
+dbfcat:
+	cc -o dbfcat dbfcat.c
