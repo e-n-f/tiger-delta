@@ -78,5 +78,5 @@ snap: snap.c
 osmconvert: osmconvert.c
 	cc -g -Wall -O3 -o osmconvert osmconvert.c -lz
 
-dbfcat:
+dbfcat: dbfcat.c
 	cc -o dbfcat dbfcat.c

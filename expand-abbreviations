@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+for $file (@ARGV) {
+	if ($file =~ /(tl_...._.....)_roads.json/) {
+		%abbrev = ();
+		open(IN, "../www2.census.gov/geo/tiger/TIGER2015/FEATNAMES/${1}_featnames.zip.abbrev");
+		while (<IN>) {
+			chomp;
+			($short, $long) = split(/\|/, $_);
+			$abbrev{$short} = $long;
+		}
+		close(IN);
+	}
+
+	open(IN, "$file");
+	while (<IN>) {
+		if (s/"FULLNAME": "([^"]*)"/"FULLNAME": ""/) {
+			$name = $1;
+			if ($abbrev{$name} ne "") {
+				$name = $abbrev{$name};
+			}
+
+			s/"FULLNAME": ""/"FULLNAME": "$name"/;
+		}
+
+		print;
+	}
+	close(IN);
+}
