@@ -22,3 +22,5 @@ Making the 2015 vector base map
     make dbfcat
     find ../www2.census.gov/geo/tiger/TIGER2015/FEATNAMES -name '*.zip' -print | xargs -t -L1 -P8 sh -c 'unzip -p $1 $(basename $1 .zip).dbf | ./dbfcat | ./handle-abbreviations > ../data/$1.abbrev' sh
     find ../data -name '*.json' -print | sort | xargs -L1 -t ./expand-abbreviations | ../tippecanoe/tippecanoe -f -Z12 -z12 -d13 -pr -l tiger2015 -o ../tiger2015.mbtiles
+
+Requires about 30GB of disk space plus tippecanoe temporary storage. I used c3.2xlarge.
