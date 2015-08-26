@@ -12,8 +12,8 @@
     }
 }
 
-#tiger20062014 {
-  [age="new"] {
+#tiger2015 {
+ 
     line-color: #ffff00;
     line-join: round;
     line-cap: round;
@@ -25,7 +25,7 @@
 
     [zoom >= 16] {
       line-width: 2;
-      text-name: '[fullname]';
+      text-name: '[FULLNAME]';
       text-face-name: 'Source Sans Pro Bold';
       text-placement:line;
       text-avoid-edges: true;
@@ -40,10 +40,10 @@
 
       [zoom >= 17] { text-size: 16; text-dy: 16 }
       [zoom >= 18] { text-size: 22; text-dy: 22 }
-    }
+  
   }
   
-
+/*
   [age="both"] {
     line-color: #dddd00;
 
@@ -68,11 +68,12 @@
       [zoom >= 18] { text-size: 22; text-dy: 22 }
     }
   }
+  */
 
   // Footway, steps, track, bike, bridle
-  [class="S1710"],[class="S1720"],[class="S1500"],[class="S1820"],[class="S1830"],
+  [MTFCC ="S1710"],[MTFCC ="S1720"],[MTFCC ="S1500"],[MTFCC ="S1820"],[MTFCC ="S1830"],
   // Service, alley, private, parking, internal(=driveway?)
-  [class="S1640"],[class="S1730"],[class="S1740"],[class="S1780"],[class="S1750"] {
+  [MTFCC ="S1640"],[MTFCC ="S1730"],[MTFCC ="S1740"],[MTFCC ="S1780"],[MTFCC ="S1750"] {
      [zoom < 14] {
        line-width:0
      }

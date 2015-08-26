@@ -5,1168 +5,1688 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-90.9542,38.6271,17</Parameter>
+  <Parameter name="center">-87.4218,41.4803,12</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[TIGER 2006-2014]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///enf.rirltyb9,enf.nc8ilik9,mapbox.mapbox-streets-v5]]></Parameter>
+  <Parameter name="name"><![CDATA[TIGER 2015]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///enf.tiger2015,enf.vwdk7qfr,mapbox.mapbox-streets-v5]]></Parameter>
 </Parameters>
 
 
-<Style name="tiger20062014" filter-mode="first">
+<Style name="tiger2015" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#8888ff" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'both')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#dddd00" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'both')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#dddd00" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'both')</Filter>
-    <LineSymbolizer stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#dddd00" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'both')</Filter>
-    <LineSymbolizer stroke="#dddd00" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1820')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1500')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1720')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1710')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1750')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1780')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1740')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1730')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1640')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830') and ([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="0" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([MTFCC] = 'S1830')</Filter>
+    <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1051')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1051')</Filter>
+    <Filter>([class] = 'R1051')</Filter>
     <LineSymbolizer stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1011')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1052')</Filter>
+    <Filter>([class] = 'R1011')</Filter>
     <LineSymbolizer stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="2" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
+    <Filter>([class] = 'R1052')</Filter>
+    <LineSymbolizer stroke="#8888ff" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([age] = 'new') and ([class] = 'R1011')</Filter>
+    <Filter>([class] = 'R1052')</Filter>
     <LineSymbolizer stroke="#8888ff" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <TextSymbolizer size="22" dy="22" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <TextSymbolizer size="16" dy="16" face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
-    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[fullname]]]></TextSymbolizer>
+    <TextSymbolizer face-name="Source Sans Pro Bold" placement="line" avoid-edges="true" wrap-width="100" wrap-before="true" fill="#ffffff" halo-radius="2" halo-fill="#000000" size="11" dy="12" ><![CDATA[[FULLNAME]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([age] = 'new')</Filter>
     <LineSymbolizer stroke="#ffff00" stroke-linejoin="round" stroke-linecap="round" />
   </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1750')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1780')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1740')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1730')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1640')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1830')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1820')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1500')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1720')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'S1710')</Filter>
-    <LineSymbolizer stroke-width="0" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'R1051')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'R1052')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'R1011')</Filter>
-    <LineSymbolizer stroke="#8888ff" />
-  </Rule>
 </Style>
-<Layer name="tiger20062014"
+<Layer name="tiger2015"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>tiger20062014</StyleName>  </Layer>
+    <StyleName>tiger2015</StyleName>  </Layer>
 
 <Style name="osmdiff" filter-mode="first">
   <Rule>
